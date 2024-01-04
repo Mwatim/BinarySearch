@@ -13,7 +13,7 @@ def binarySearch(list_of_numbers, target):
 
     while left <= right:
         # mitigate integer overflow
-        mid_value = (right - left) // 2
+        mid_value = left + (right - left) // 2
         if target == list_of_numbers[mid_value]:
             return mid_value
         
@@ -28,8 +28,6 @@ def binarySearch(list_of_numbers, target):
 if __name__ == '__main__':
     list_of_numbers = [2,3,5,81,95,52,42,7,8,10,12,15,18,20]
     target = 52
-
-    list_of_numbers = sorted(list_of_numbers)
 
     index = binarySearch(list_of_numbers, target)
 
